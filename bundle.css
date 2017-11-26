@@ -1,0 +1,9 @@
+.ctxmenu {
+  display: none;
+  position: absolute;
+  z-index: 99999;
+}
+.ctxmenu .show {
+  display: block;
+}
+

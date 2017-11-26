@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Test</title>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="./dist/vuejsContextmenu.min.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<ctxmenu>
+			<ul class="list" slot="ctxmenu">
+				<li class="listitem" onclick="window.open('https://www.google.com/','_blank')">Google</li>
+				<li class="listitem" onclick="window.open('https://www.facebook.com/','_blank')">Facebook</li>
+			</ul>
+			<div class="box">box1</div>
+			This text doesn't have custom contextmenu
+			<br>
+			<span>But this text have custom contextmenu</span>
+		</ctxmenu>
+	</div>
+	<script>
+		Vue.component('ctxmenu', vuejsContextmenu)
+		const app = new Vue({
+			el: '#app'
+		})
+	</script>
+	<style>
+		.box {
+			height: 100px;
+			width: 100px;
+			border: 1px solid rgba(0, 0, 0, .125);
+		}
+
+		.list {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.listitem {
+			position: relative;
+			display: block;
+			border: 1px solid rgba(0, 0, 0, .125);
+			padding: .75rem 1.25rem;
+		}
+
+		.listitem:hover {
+			background-color: rgba(233, 233, 233, .5);
+		}
+	</style>
+</body>
+
+</html>
