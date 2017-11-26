@@ -1,6 +1,8 @@
 # vuejs-contextmenu
 > vue.js contextmenu wrapper
 
+[![Build Status](https://travis-ci.org/maple3142/vuejs-contextmenu.svg?branch=master)](https://travis-ci.org/maple3142/vuejs-contextmenu)
+
 ## Usage
 ### &lt;script>
 ```html
@@ -42,3 +44,5 @@ const app = new Vue({
   })
 </script>
 ```
+
+## [Example](https://unpkg.com/vuejs-contextmenu/example.html)

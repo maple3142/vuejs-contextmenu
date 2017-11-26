@@ -1,6 +1,6 @@
 {
 	"name": "vuejs-contextmenu",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"main": "dist/vuejsContextmenu.js",
 	"license": "MIT",
 	"devDependencies": {
