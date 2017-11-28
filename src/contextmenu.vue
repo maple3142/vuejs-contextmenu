@@ -20,8 +20,9 @@ export default {
 			this.$emit('close', e)
 		})
 
-		this.$slots.default.forEach(vnode => {
-			if (!vnode.elm) return
+		for (let i = 0; i < this.$slots.default.length; i++) {
+			const vnode = this.$slots.default[i]
+			if (!vnode.elm) continue
 
 			vnode.elm.addEventListener('contextmenu', e => {
 
@@ -35,18 +36,18 @@ export default {
 
 				this.$emit('open', e)
 			})
-		})
+		}
 	}
 }
 </script>
 <style lang="less" scoped>
 .ctxmenu {
-  display: none;
-  position: absolute;
-  z-index: 99999;
+	display: none;
+	position: absolute;
+	z-index: 99999;
 
-  &.show {
-    display: block !important;
-  }
+	&.show {
+		display: block !important;
+	}
 }
 </style>

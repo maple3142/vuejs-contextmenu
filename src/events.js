@@ -6,6 +6,8 @@ export function register(name, callback) {
 }
 export function trigger(name, ...args) {
 	if (name in events) {
-		events[name].forEach(callback => callback(...args))
+		for (let i = 0; i < events[name].length; i++) {
+			events[name][i](...args) //callback
+		}
 	}
 }

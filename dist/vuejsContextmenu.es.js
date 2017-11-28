@@ -92,14 +92,16 @@ function register(name, callback) {
 	events[name].push(callback);
 }
 function trigger(name) {
-	for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-		args[_key - 1] = arguments[_key];
-	}
-
 	if (name in events) {
-		events[name].forEach(function (callback) {
-			return callback.apply(undefined, args);
-		});
+		for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+			args[_key - 1] = arguments[_key];
+		}
+
+		for (var i = 0; i < events[name].length; i++) {
+			var _events$name;
+
+			(_events$name = events[name])[i].apply(_events$name, args); //callback
+		}
 	}
 }
 
@@ -133,8 +135,9 @@ var ctxmenu$1 = { render: function render() {
 			_this.$emit('close', e);
 		});
 
-		this.$slots.default.forEach(function (vnode) {
-			if (!vnode.elm) return;
+		for (var i = 0; i < this.$slots.default.length; i++) {
+			var vnode = this.$slots.default[i];
+			if (!vnode.elm) continue;
 
 			vnode.elm.addEventListener('contextmenu', function (e) {
 
@@ -148,19 +151,21 @@ var ctxmenu$1 = { render: function render() {
 
 				_this.$emit('open', e);
 			});
-		});
+		}
 	}
 };
 
-var handler = function handler(e) {
-	[].forEach.call(document.getElementsByClassName(ctxClassname), function (elem) {
+function handler(e) {
+	var ctxmenus = document.getElementsByClassName(ctxClassname);
+	for (var i = 0; i < ctxmenus.length; i++) {
+		var elem = ctxmenus[i];
 		if (elem.classList.contains(showClassname)) {
 			elem.classList.remove(showClassname);
 			var evtname = elem.getAttribute(uuidAttr);
 			trigger(evtname, e);
 		}
-	});
-};
+	}
+}
 document.addEventListener('contextmenu', handler);
 document.addEventListener('click', handler);
 
