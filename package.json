@@ -1,22 +1,25 @@
 {
-  "name": "vuejs-contextmenu",
-  "version": "0.0.1",
-  "main": "dist/vuejsContextmenu.js",
-  "license": "MIT",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "rollup": "^0.51.8",
-    "rollup-plugin-babel": "^3.0.2",
-    "rollup-plugin-vue": "^2.5.2",
-    "uglify-js": "^3.2.0",
-    "vue": "^2.5.8",
-    "vue-template-compiler": "^2.5.8"
-  },
-  "scripts": {
-    "build": "yarn build:umd && yarn build:es && yarn build:min",
-    "build:umd": "rollup -c",
-    "build:es": "rollup -c -o dist/vuejsContextmenu.es.js -f es",
-    "build:min": "uglifyjs dist/vuejsContextmenu.js -c -m -o dist/vuejsContextmenu.min.js"
-  }
+	"name": "vuejs-contextmenu",
+	"version": "0.0.1",
+	"main": "dist/vuejsContextmenu.js",
+	"license": "MIT",
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"rollup": "^0.51.8",
+		"rollup-plugin-babel": "^3.0.2",
+		"rollup-plugin-commonjs": "^8.2.6",
+		"rollup-plugin-node-resolve": "^3.0.0",
+		"rollup-plugin-vue": "^2.5.2",
+		"uglify-js": "^3.2.0",
+		"uuid": "^3.1.0",
+		"vue": "^2.5.8",
+		"vue-template-compiler": "^2.5.8"
+	},
+	"scripts": {
+		"build": "yarn build:umd && yarn build:es && yarn build:min",
+		"build:umd": "rollup -c",
+		"build:es": "rollup -c -o dist/vuejsContextmenu.es.js -f es",
+		"build:min": "uglifyjs dist/vuejsContextmenu.js -c -m -o dist/vuejsContextmenu.min.js"
+	}
 }

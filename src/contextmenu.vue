@@ -7,18 +7,35 @@
 	</div>
 </template>
 <script>
+import v4 from 'uuid/v4'
+import * as events from './events'
+import { uuidAttr, showClassname } from './constants'
+
 export default {
 	mounted() {
 		const ctxmenu = this.$refs.ctxmenu
-		this.$slots.default.map(vnode=>vnode.elm).filter(elm=>!!elm).forEach(el=>el.addEventListener('contextmenu', e => {
-			e.preventDefault()
-			e.stopPropagation()
+		const uuid = v4() //use uuid to identify which ctxmenu is closed
+		ctxmenu.setAttribute(uuidAttr, uuid)
+		events.register(uuid, e => { //uuid as event name
+			this.$emit('close', e)
+		})
 
-			ctxmenu.style.top = e.y + 'px'
-			ctxmenu.style.left = e.x + 'px'
+		this.$slots.default.forEach(vnode => {
+			if (!vnode.elm) return
 
-			ctxmenu.classList.add('show')
-		}))
+			vnode.elm.addEventListener('contextmenu', e => {
+
+				e.preventDefault()
+				e.stopPropagation()
+
+				//move element and show it
+				ctxmenu.style.top = e.y + 'px'
+				ctxmenu.style.left = e.x + 'px'
+				ctxmenu.classList.add(showClassname)
+
+				this.$emit('open', e)
+			})
+		})
 	}
 }
 </script>

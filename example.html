@@ -12,7 +12,7 @@
 
 <body>
 	<div id="app">
-		<ctxmenu>
+		<ctxmenu @open="open1" @close="close1">
 			<ul class="list" slot="ctxmenu">
 				<li class="listitem">
 					<a href="https://www.google.com/">Google</a>
@@ -26,11 +26,35 @@
 			<br>
 			<span>But this text have custom contextmenu</span>
 		</ctxmenu>
+
+		<ctxmenu @open="open2" @close="close2">
+			<ul class="list" slot="ctxmenu">
+				<li class="listitem">
+					<a href="https://www.google.com/">Google</a>
+				</li>
+			</ul>
+			<div class="box">box2</div>
+		</ctxmenu>
 	</div>
 	<script>
 		Vue.component('ctxmenu', vuejsContextmenu)
+		Vue.prototype.$log = console.log.bind(console)
 		const app = new Vue({
-			el: '#app'
+			el: '#app',
+			methods: {
+				open1(e) {
+					console.log('ctx1 open', e)
+				},
+				open2(e) {
+					console.log('ctx2 open', e)
+				},
+				close1(e) {
+					console.log('ctx1 close', e)
+				},
+				close2(e) {
+					console.log('ctx2 close', e)
+				}
+			}
 		})
 	</script>
 	<style>
