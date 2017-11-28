@@ -39,7 +39,7 @@ export default {
 	}
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .ctxmenu {
   display: none;
   position: absolute;

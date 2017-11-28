@@ -1,5 +1,5 @@
 # vuejs-contextmenu
-> vue.js contextmenu wrapper
+> vue.js contextmenu wrapper (currently unstable)
 
 [![Build Status](https://travis-ci.org/maple3142/vuejs-contextmenu.svg?branch=master)](https://travis-ci.org/maple3142/vuejs-contextmenu)
 
@@ -45,4 +45,21 @@ const app = new Vue({
 </script>
 ```
 
-## [Example](https://unpkg.com/vuejs-contextmenu/example.html)
+## [Example](https://rawgit.com/maple3142/vuejs-contextmenu/master/example.html)
+Example use all the features this component can provide.
+
+## API (May change)
+### Slots
+#### `default`
+Contents in `default` slot will displayed normally
+
+Right click/long press(mobile) will trigger contextmenu
+#### `ctxmenu`
+`ctxmenu` slot will be wrapped in a invisible `div.ctxmenu`
+
+It will appear when being triggered, and disappeared when next click.
+### Events
+#### `open`
+Triggerd after context menu opened.
+#### `close`
+Triggerd after context menu closed.
