@@ -23,7 +23,6 @@
 		"build": "yarn build:umd && yarn build:es && yarn build:min",
 		"build:umd": "rollup -c",
 		"build:es": "rollup -c -o dist/vuejsContextmenu.es.js -f es",
-		"build:min": "uglifyjs dist/vuejsContextmenu.js -c -m -o dist/vuejsContextmenu.min.js",
-		"publish": "np --no-yarn"
+		"build:min": "uglifyjs dist/vuejsContextmenu.js -c -m -o dist/vuejsContextmenu.min.js"
 	}
 }
