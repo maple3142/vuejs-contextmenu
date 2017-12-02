@@ -1,7 +1,9 @@
 {
 	"name": "vuejs-contextmenu",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"main": "dist/vuejsContextmenu.js",
+	"browser": "dist/vuejsContextmenu.min.js",
+	"module": "dist/vuejsContextmenu.es.js",
 	"license": "MIT",
 	"devDependencies": {
 		"babel-core": "^6.26.0",
