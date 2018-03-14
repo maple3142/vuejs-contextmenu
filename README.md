@@ -1,4 +1,6 @@
 # vuejs-contextmenu
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/maple3142/vuejs-contextmenu.svg)](https://greenkeeper.io/)
 > vue.js contextmenu wrapper (currently unstable)
 
 [![Build Status](https://travis-ci.org/maple3142/vuejs-contextmenu.svg?branch=master)](https://travis-ci.org/maple3142/vuejs-contextmenu)
