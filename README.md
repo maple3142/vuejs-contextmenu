@@ -7,6 +7,7 @@
 
 ## Usage
 ### &lt;script>
+
 ```html
 <script src="https://unpkg.com/vue"></script>
 <!--path to vuejsContextmenu(.min).js-->
@@ -28,6 +29,7 @@
   </ctxmenu>
 </div>
 ```
+
 ```javascript
 //global
 Vue.component('ctxmenu', window.vuejsContextmenu)
@@ -35,7 +37,9 @@ const app = new Vue({
   el: '#app'
 })
 ```
+
 ### &lt;script type="module">
+
 ```html
 <script type="module">
   //vuejsContextmenu.es.js is build for es6

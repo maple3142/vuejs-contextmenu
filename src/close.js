@@ -1,7 +1,7 @@
 import * as events from './events'
 import { uuidAttr, ctxClassname, showClassname } from './constants'
 
-function handler(e) {
+export function handler(e) {
 	const ctxmenus = document.getElementsByClassName(ctxClassname)
 	for (let i = 0; i < ctxmenus.length; i++) {
 		const elem = ctxmenus[i]

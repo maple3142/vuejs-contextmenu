@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<div ref="ctxmenu" class="ctxmenu">
+		<div ref="ctxmenu"
+		     class="ctxmenu">
 			<slot name="ctxmenu" />
 		</div>
 		<slot ref="target" />
@@ -10,13 +11,15 @@
 import v4 from 'uuid/v4'
 import * as events from './events'
 import { uuidAttr, showClassname } from './constants'
+import { handler as closeHandler } from './close'
 
 export default {
 	mounted() {
 		const ctxmenu = this.$refs.ctxmenu
 		const uuid = v4() //use uuid to identify which ctxmenu is closed
 		ctxmenu.setAttribute(uuidAttr, uuid)
-		events.register(uuid, e => { //uuid as event name
+		events.register(uuid, e => {
+			//uuid as event name
 			this.$emit('close', e)
 		})
 
@@ -25,10 +28,11 @@ export default {
 			if (!vnode.elm) continue
 
 			vnode.elm.addEventListener('contextmenu', e => {
-
 				e.preventDefault()
 				e.stopPropagation()
 
+				//handle close others
+				closeHandler(e)
 				//move element and show it
 				ctxmenu.style.top = e.y + 'px'
 				ctxmenu.style.left = e.x + 'px'
