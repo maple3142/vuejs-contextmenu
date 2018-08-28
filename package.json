@@ -10,7 +10,7 @@
 		"babel-preset-env": "^1.6.1",
 		"np": "^2.17.0",
 		"rollup": "^0.60.7",
-		"rollup-plugin-babel": "^3.0.2",
+		"rollup-plugin-babel": "^4.0.1",
 		"rollup-plugin-commonjs": "^9.1.0",
 		"rollup-plugin-node-resolve": "^3.0.0",
 		"rollup-plugin-vue": "^3.0.0",
