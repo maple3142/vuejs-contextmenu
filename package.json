@@ -17,7 +17,7 @@
 		"uglify-js": "^3.2.0",
 		"uuid": "^3.1.0",
 		"vue": "^2.5.8",
-		"vue-template-compiler": "^2.5.8"
+		"vue-template-compiler": "2.5.17"
 	},
 	"scripts": {
 		"build": "yarn build:umd && yarn build:es && yarn build:min",
