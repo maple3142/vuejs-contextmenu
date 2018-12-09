@@ -12,7 +12,7 @@
 		"rollup": "^0.67.1",
 		"rollup-plugin-babel": "^3.0.2",
 		"rollup-plugin-commonjs": "^9.1.0",
-		"rollup-plugin-node-resolve": "^3.0.0",
+		"rollup-plugin-node-resolve": "^4.0.0",
 		"rollup-plugin-vue": "^3.0.0",
 		"uglify-js": "^3.2.0",
 		"uuid": "^3.1.0",
